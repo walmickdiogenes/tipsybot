@@ -1,0 +1,7 @@
+0	1	mikroCPIC1618.exe -MSF -DBG -pP18F4550 -GC -DL -O11111114 -fo48 -N"E:\PROJECTS\Proteus\Microcontroladores e Microprocessadores\Projeto\cod\tipsybot.mcppi" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\Defs\" -SP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\uses\P18\" -SP"E:\PROJECTS\Proteus\Microcontroladores e Microprocessadores\Projeto\cod\" -IP"C:\Users\Public\Documents\Mikroelektronika\mikroC PRO for PIC\uses\P18\" -IP"E:\PROJECTS\Proteus\Microcontroladores e Microprocessadores\Projeto\cod\" "tipsybot.c" "__Lib_Math.mcl" "__Lib_MathDouble.mcl" "__Lib_System.mcl" "__Lib_Delays.mcl" "__Lib_Button.mcl" "__Lib_UART_c67.mcl" "__Lib_LcdConsts.mcl" "__Lib_Lcd.mcl"	 
+hint: 0	1139	Available RAM: 2027 [bytes], Available ROM: 32768 [bytes]	 
+diagnostics: 0	122	Compilation Started	tipsybot.c
+error: 64	315	Invalid expression	tipsybot.c
+hint: 201	1163	Variable 'j' has been declared, but not used	tipsybot.c
+error: 216	318	Assigning to non-lvalue 'TMR0IE'	tipsybot.c
+error: 0	102	Finished (with errors): 19 jun 2019, 18:16:18	tipsybot.mcppi

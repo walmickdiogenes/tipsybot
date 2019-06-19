@@ -1,0 +1,24 @@
+1. home()
+	"Precione OK para(\n)eleger um drink!"
+2. Após precionado OK, mostrar no LCD:
+	drinksDisponiveis() 
+		"Drink Azul"
+		"Drink Amarelo"
+		"Drink Verde"
+	
+	se OK em value:
+		mostrar no LCD:
+			quantidade()
+				"50ml"
+				"100ml"
+				"200ml"
+
+	se OK em value:
+		mostrar no LCD:
+			"Aguarde..."
+
+	se não:
+		delay(15s)
+		home()
+
+	
