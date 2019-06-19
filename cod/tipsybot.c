@@ -24,7 +24,10 @@ void opcoes();
 void azul();
 void verde();
 void amarelo();
-void drink_1();
+void drink_1g();
+void drink_1p();
+void drink_2g();
+void drink_2p();
 
 void main() {
 
@@ -41,18 +44,6 @@ void main() {
      TRISD1_bit = 0;         //direção 1
      TRISD2_bit = 0;         //passo 2
      TRISD3_bit = 0;         //direção 2
-     
-     //configurando o timer
-     GIE_bit = 0;            //habilita a interrupção global
-     T0CS_bit = 0;
-     PSA_bit = 0;
-     T0PS0_bit = 0b111;      //256
-     T08BIT_bit = 0;         //16bits de tempo
-     TMR0ON_bit = 1;         //inicia o timer 0
-     TMR0IF_bit = 0;         //flag
-     TMR0IE_bit = 1;         //permitir que o timer estoure
-     PEIE_bit = 1;           //interrupção de perifericos
-     GIE_bit = 1;
 
      //INICIALIZA LCD
      Lcd_Init();
@@ -61,24 +52,23 @@ void main() {
      UART1_Init(9600);
 
      //msg_inicial();
-     //drink_1();
      opcoes();
+     drink_1p();
 
      //loop
      while(1){
-              if(counter == ){
-                  RD1_bit = ~RD1_bit;
-                  counter = 0;
-              }
-
               if (Button(&PORTB, 0, 50, 1)){
                  azul();
+                 drink_1g();
               }
               if (Button(&PORTB, 1, 50, 1)){
                  amarelo();
+                 drink_2g();
               }
               if (Button(&PORTB, 2, 50, 1)){
                  verde();
+                 drink_1p();
+                 drink_2p();
               }
 
      }
@@ -200,25 +190,61 @@ void verde(){
      UART1_Write(13);
      UART1_Write_Text("-> 25 mls da bebida amarela");
 }
-//50mls: 42.5 segundos
-//25mls: 21.2 segundos
-void drink_1(){
-     int i, j;
+//50mls: 42.5 segundos      21250 passos
+//25mls: 21.2 segundos      10625 passos
+void drink_1g(){
+     int i;
      while(1){
           LATD1_bit = 1;
-          for(i =0; i<200; i++){
+          for(i =0; i<21250; i++){
                 LATD0_bit = 1;
                 Delay_us(1000);
                 LATD0_bit = 0;
                 Delay_us(1000);
           }
+             break;
      }
 }
 
-void interrupt(){
-     if(T0IF_bit){             //testando se houve estouro do tmr0
-          counter++;
-          TMR0IE = 0;          //reinicia o registrador tmr0
-          T0IF_BIT = 0;        //limpando a flag
+void drink_1p(){
+     int i;
+     while(1){
+          LATD1_bit = 1;
+          for(i =0; i<10625; i++){
+                LATD0_bit = 1;
+                Delay_us(1000);
+                LATD0_bit = 0;
+                Delay_us(1000);
+          }
+             break;
      }
 }
+
+void drink_2g(){
+     int i;
+     while(1){
+          LATD1_bit = 1;
+          for(i =0; i<21250; i++){
+                LATD0_bit = 1;
+                Delay_us(1000);
+                LATD0_bit = 0;
+                Delay_us(1000);
+          }
+             break;
+     }
+}
+
+void drink_2p(){
+     int i;
+     while(1){
+          LATD1_bit = 1;
+          for(i =0; i<10625; i++){
+                LATD0_bit = 1;
+                Delay_us(1000);
+                LATD0_bit = 0;
+                Delay_us(1000);
+          }
+             break;
+     }
+}
+

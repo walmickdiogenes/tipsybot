@@ -246,6 +246,7 @@ cmip
 cmip_bit
 comfrem
 compare_double
+counter
 crc16ee
 crc16ee_bit
 crc16ef
@@ -332,7 +333,10 @@ double2int
 double2longint
 double2longword
 double2word
-drink_1
+drink_1g
+drink_1p
+drink_2g
+drink_2p
 eccp1as
 eccp1con
 eccp1del

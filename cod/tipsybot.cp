@@ -25,7 +25,10 @@ void opcoes();
 void azul();
 void verde();
 void amarelo();
-void drink_1();
+void drink_1g();
+void drink_1p();
+void drink_2g();
+void drink_2p();
 
 void main() {
 
@@ -44,37 +47,29 @@ void main() {
  TRISD3_bit = 0;
 
 
- GIE_bit = 0;
- T0CS_bit = 0;
- PSA_bit = 0;
- T0PS0_bit = 0b111;
-
-
-
  Lcd_Init();
 
 
  UART1_Init(9600);
 
 
-
  opcoes();
+ drink_1p();
 
 
  while(1){
- if(counter == ){
- RD1_bit = ~RD1_bit;
- counter = 0;
- }
-
  if (Button(&PORTB, 0, 50, 1)){
  azul();
+ drink_1g();
  }
  if (Button(&PORTB, 1, 50, 1)){
  amarelo();
+ drink_2g();
  }
  if (Button(&PORTB, 2, 50, 1)){
  verde();
+ drink_1p();
+ drink_2p();
  }
 
  }
@@ -198,23 +193,58 @@ void verde(){
 }
 
 
-void drink_1(){
- int i, j;
+void drink_1g(){
+ int i;
  while(1){
  LATD1_bit = 1;
- for(i =0; i<200; i++){
+ for(i =0; i<21250; i++){
  LATD0_bit = 1;
  Delay_us(1000);
  LATD0_bit = 0;
  Delay_us(1000);
  }
+ break;
  }
 }
 
-void interrupt(){
- if(T0IF_bit){
- counter++;
- TMR0IE = 0;
- T0IF_BIT = 0;
+void drink_1p(){
+ int i;
+ while(1){
+ LATD1_bit = 1;
+ for(i =0; i<10625; i++){
+ LATD0_bit = 1;
+ Delay_us(1000);
+ LATD0_bit = 0;
+ Delay_us(1000);
+ }
+ break;
+ }
+}
+
+void drink_2g(){
+ int i;
+ while(1){
+ LATD1_bit = 1;
+ for(i =0; i<21250; i++){
+ LATD0_bit = 1;
+ Delay_us(1000);
+ LATD0_bit = 0;
+ Delay_us(1000);
+ }
+ break;
+ }
+}
+
+void drink_2p(){
+ int i;
+ while(1){
+ LATD1_bit = 1;
+ for(i =0; i<10625; i++){
+ LATD0_bit = 1;
+ Delay_us(1000);
+ LATD0_bit = 0;
+ Delay_us(1000);
+ }
+ break;
  }
 }

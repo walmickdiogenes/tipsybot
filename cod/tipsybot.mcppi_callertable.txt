@@ -4,7 +4,21 @@ main
 		Delay_5500us
 		Delay_1us
 	UART1_Init
-	drink_1
+	opcoes
+		Lcd_Cmd
+			Delay_1us
+			Delay_5500us
+			Delay_50us
+		Lcd_Out_CP
+			Lcd_Chr_CP
+				Lcd_Cmd
+					Delay_1us
+					Delay_5500us
+					Delay_50us
+		UART1_Write
+		UART1_Write_Text
+			UART1_Write
+	drink_1p
 	Button
 		Delay_500us
 	azul
@@ -21,6 +35,7 @@ main
 		UART1_Write
 		UART1_Write_Text
 			UART1_Write
+	drink_1g
 	amarelo
 		Lcd_Cmd
 			Delay_1us
@@ -35,6 +50,7 @@ main
 		UART1_Write
 		UART1_Write_Text
 			UART1_Write
+	drink_2g
 	verde
 		Lcd_Cmd
 			Delay_1us
@@ -49,3 +65,4 @@ main
 		UART1_Write
 		UART1_Write_Text
 			UART1_Write
+	drink_2p
