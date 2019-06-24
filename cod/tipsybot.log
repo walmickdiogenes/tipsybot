@@ -7,6 +7,6 @@ hint: 0	1144	Used RAM (bytes): 486 (24%)  Free RAM (bytes): 1541 (76%)	Used RAM 
 hint: 0	1144	Used ROM (bytes): 2379 (7%)  Free ROM (bytes): 30389 (93%)	Used ROM (bytes): 2379 (7%)  Free ROM (bytes): 30389 (93%)
 diagnostics: 0	125	Project Linked Successfully	tipsybot.mcppi
 hint: 0	1004	COFF file successfully generated	COFF file successfully generated
-diagnostics: 0	128	Linked in 375 ms	 
-diagnostics: 0	129	Project 'tipsybot.mcppi' completed: 469 ms	 
-diagnostics: 0	103	Finished successfully: 19 jun 2019, 19:14:20	tipsybot.mcppi
+diagnostics: 0	128	Linked in 500 ms	 
+diagnostics: 0	129	Project 'tipsybot.mcppi' completed: 609 ms	 
+diagnostics: 0	103	Finished successfully: 20 jun 2019, 14:57:04	tipsybot.mcppi
