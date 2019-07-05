@@ -42,7 +42,7 @@ void main() {
      //configurando os pinos do motor como saida
      TRISD0_bit = 0;         //passo 1
      TRISD1_bit = 0;         //direção 1
-     TRISD2_bit = 0;         //passo 2
+     TRISD2_bit = 0;         //passo 2                                                       //////
      TRISD3_bit = 0;         //direção 2
 
      //INICIALIZA LCD
@@ -51,8 +51,8 @@ void main() {
      //INICIALIZA COMUNICAÇÃO SERIAL
      UART1_Init(9600);
 
-     //msg_inicial();
-     opcoes();
+     msg_inicial();
+     //opcoes();
      drink_1p();
 
      //loop
@@ -247,4 +247,3 @@ void drink_2p(){
              break;
      }
 }
-
